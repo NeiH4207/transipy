@@ -1,7 +1,15 @@
 {
     "poor": "Kém",
     "intermediate": "Trung bình",
-    "normal": "Bình thường",
-    "rapid": "Nhanh",
-    "ultra-rapid": "Cực nhanh"
+    "good": "Tốt",
+    "lower": "Thấp",
+    "slightly lower": "Khá thấp",
+    "slightly low": "Khá thấp",
+    "slightly high": "Khá cao",
+    "slightly higher": "Khá cao",
+    "higher": "Cao",
+    "severe": "Nghiêm trọng",
+    "critical": "Rất nghiêm trọng",
+    "slightly severe": "Khá nghiêm trọng",
+    "slightly mild": "Khá nhẹ"
 }

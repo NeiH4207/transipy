@@ -2,3 +2,4 @@ loguru==0.7.2
 numpy==1.26.4
 pandas==2.2.2
 googletrans-py==4.0.0
+openpyxl==3.1.2
