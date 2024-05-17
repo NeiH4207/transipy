@@ -24,6 +24,9 @@ def get_all_excel_sheet_names(file_path, skip_list: list = []):
     return [sheet for sheet in sheets if sheet not in skip_list]
 
 def translate(text, src, dest):
+    if not isinstance(text, str):
+        return text
+    
     params = {
         "client": "gtx",
         "sl": src,
@@ -45,4 +48,5 @@ def translate(text, src, dest):
             except Exception as e:
                 logger.error(f"Error when translating {text} from {src} to {dest}: {e}")
                 return text
+            
             
