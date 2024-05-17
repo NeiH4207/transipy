@@ -17,6 +17,16 @@ def is_excel(file_path):
 def is_text(file_path):
     return get_file_extension(file_path) == '.txt'
 
+def get_separetor(sep):
+    if sep == 'comma':
+        return ','
+    elif sep == 'tab':
+        return '\t'
+    elif sep == 'semicolon':
+        return ';'
+    else:
+        return ','
+
 def get_all_excel_sheet_names(file_path, skip_list: list = []):
     sheets = []
     with zipfile.ZipFile(file_path, 'r') as zip_ref: xml = zip_ref.read("xl/workbook.xml").decode("utf-8")

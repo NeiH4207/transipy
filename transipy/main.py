@@ -114,10 +114,10 @@ def get_parser():
     parser = argparse.ArgumentParser(
         description='Translate text in a file (.csv/.txt) from source language to target language.',
     )
-    parser.add_argument('-f', '--file-path', type=str, default='examples/sample.txt', help='The source file path')
-    parser.add_argument('--sep', type=str, help='The separator of the file')
-    parser.add_argument('-s', '--source', type=str, default='en', help='Source language (e.g. en, vi)')
-    parser.add_argument('-t', '--target', type=str, default='vi', help='target language (e.g. en, vi)')
+    parser.add_argument('-f', '--file-path', type=str, required=True, help='The source file path')
+    parser.add_argument('--sep', type=str, default=None, help='The separator of the file')
+    parser.add_argument('-s', '--source', type=str, required=True, help='Source language (e.g. en, vi)')
+    parser.add_argument('-t', '--target', type=str, required=True, help='target language (e.g. en, vi)')
     parser.add_argument('-c', '--chunk-size', type=int, default=8, help='The chunk size for splitting the translation process')
     parser.add_argument('-o', '--output-file', type=str, default=None, help='The output file path')
     parser.add_argument('--default-dict', type=str, default=None, help='The default dictionary path for translations')
@@ -146,7 +146,7 @@ def main():
         output_file = args.output_file
     
     if is_csv(input_file):
-        df = pd.read_csv(input_file)
+        df = pd.read_csv(input_file, sep=get_separetor(args.sep))
         df = translate_csv(df, source_langugage, target_language, output_file, chunk_size, default_dict)
         df.to_csv(output_file, index=False)
     

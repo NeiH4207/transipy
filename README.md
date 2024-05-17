@@ -120,6 +120,56 @@ options:
                         The default dictionary path for translations
 ```
 
+#### Translate a CSV file
+
+Example:
+```bash
+transipy -f examples/sample.csv --sep , -s en -t vi -c 8
+```
+
+#### Translate a TXT file
+
+Example:
+```bash
+transipy -f examples/sample.txt -s en -t vi -c 8
+```
+
+#### Translate a XLSX file
+
+Example:
+```bash
+transipy -f examples/sample.xlsx -s en -t vi -c 8
+```
+
+#### Translate a file with a default dictionary
+
+Example:
+```bash
+transipy -f examples/sample.xlsx --sep , -s en -t vi -c 8 --default-dict examples/dictionary.json
+```
+
+Example input file:
+```csv
+| Title            | Summary                   | Level 1 | Level 2        | Level 3        | Level 4 |
+| ---------------- | ------------------------  | ------- | -------------- | -------------- | ------- |
+| Stomach Cancer   | Likelihood of Development | lower   | slightly lower | slightly higher| higher  |
+| Colorectal Cancer| Likelihood of Development | lower   | slightly lower | slightly higher| higher  |
+| Thyroid Cancer   | Likelihood of Development | lower   | slightly lower | slightly higher| higher  |
+| Lung Cancer      | Likelihood of Development | lower   | slightly lower | slightly higher| higher  |
+| Liver Cancer     | Likelihood of Development | lower   | slightly lower | slightly higher| higher  |
+
+```
+
+Example output file:
+```csv
+| Title              | Summary                  | Level 1 | Level 2        | Level 3        | Level 4 |
+| ------------------ | ------------------------ | ------- | -------------- | -------------- | ------- |
+| Ung thư dạ dày     | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư đại trực   | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư tuyến giáp | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư phổi       | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư gan        | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+```
 
 
 <!-- CONTRIBUTING -->
