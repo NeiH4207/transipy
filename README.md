@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/NeiH4207/transipy">
-    <img src="images/transipy_logo.jpeg" alt="Logo" width="80" height="80">
+    <img src="images/transipy_logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>
@@ -124,7 +124,7 @@ options:
 
 Example:
 ```bash
-transipy -f examples/sample.csv --sep , -s en -t vi -c 8
+transipy -f examples/sample.csv --sep comma -s en -t vi -c 8
 ```
 
 #### Translate a TXT file
