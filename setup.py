@@ -8,8 +8,8 @@ def get_requirements(path: str):
     return [l.strip() for l in open(path)]
 
 setup(
-    name='Fastest Google Translator',
-    version='1.0.1',
+    name='transipy',
+    version='1.0.2',
     description='Transipy is your one-stop solution for lightning-fast and accurate document translation.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -22,7 +22,7 @@ setup(
     python_requires='>=3.10',
     entry_points={
         'console_scripts': [
-            'transipy=transipy.main:main'
+            'transipy=transipy:main'
         ],
     },
 )

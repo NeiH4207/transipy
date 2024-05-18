@@ -21,10 +21,10 @@ def get_parser():
     parser.add_argument('--column', type=str, default=None, help='The column name to translate, separated by comma')
     parser.add_argument('--skip', type=str, default=None, help='The column name to skip, separated by comma')
     parser.add_argument('--sheet', type=str, default=None, help='The sheet name to translate, separated by comma')
-    return parser
+    return parser.parse_args()
 
 def main():    
-    args = get_parser().parse_args()
+    args = get_parser()
     input_file = args.file_path
     source_language = args.source
     target_language = args.target
@@ -136,8 +136,3 @@ def main():
     else:
         logger.error("Unsupported file format. Please use .csv/.txt or .xlsx files.")
         return
-
-    
-    
-if __name__ == '__main__':
-    main()
