@@ -10,6 +10,7 @@ __pycache__/
 .vscode/
 .logs/
 .tmp/
+*-workspace
 
 # Distribution / packaging
 .Python
