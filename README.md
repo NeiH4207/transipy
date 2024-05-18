@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/NeiH4207/transipy">
-    <img src="images/transipy_logo.png" alt="Logo" width="80" height="80">
+    <img src="images/transipy_logo.png" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>
@@ -45,16 +45,13 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -79,7 +76,7 @@ Transform your document translation workflow with Transipy – the powerful, fas
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Installation
 
 Install the required packages using the following command:
 
