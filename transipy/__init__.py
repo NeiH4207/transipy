@@ -1,0 +1,1 @@
+from transipy.main import main
