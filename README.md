@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/NeiH4207/transipy">
-    <img src="images/transipy_logo.png" alt="Logo" width="180" height="180">
+    <img src="images/transipy_logo.jpeg" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>

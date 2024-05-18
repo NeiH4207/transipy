@@ -9,7 +9,7 @@ def get_requirements(path: str):
 
 setup(
     name='transipy',
-    version='1.0.2',
+    version='1.0.3',
     description='Transipy is your one-stop solution for lightning-fast and accurate document translation.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -19,7 +19,7 @@ setup(
     packages=find_packages(),
     keywords='google translate, translation, document translation, language translation',
     install_requires=get_requirements("requirements.txt"),
-    python_requires='>=3.10',
+    python_requires='>=3.9',
     entry_points={
         'console_scripts': [
             'transipy=transipy:main'
