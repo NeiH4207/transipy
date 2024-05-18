@@ -128,26 +128,10 @@ options:
 
 Example:
 ```bash
-transipy -f examples/sample.csv --sep comma -s en -t vi
-transipy -f examples/news_sample.csv --sep comma -s en -t vi --skip label
-transipy -f examples/news_sample.csv --sep comma -s en -t vi --column main_text
+transipy -f path_to_file.[csv, tsv, txt, xlsx] -s en -t vi
 ```
 
-#### Translate a TXT file
-
-Example:
-```bash
-transipy -f examples/sample.txt -s en -t vi
-```
-
-#### Translate a XLSX file
-
-Example:
-```bash
-transipy -f examples/sample.xlsx -s en -t vi
-```
-
-#### Translate a file with a default dictionary
+#### Translate a file with a dictionary
 
 The dictionary file is a JSON file that contains the translation of the words. 
 The dictionary file should be in the following format (see examples/dictionary.json):
@@ -159,9 +143,10 @@ The dictionary file should be in the following format (see examples/dictionary.j
 }
 ```
 
-Example:
+Example, you have a dictionary file named "dictionary.json" and you want to translate specific columns ("Title" and "Summary") from a CSV file from English to Vietnamese. You can use the following command:
+
 ```bash
-transipy -f examples/sample.xlsx -s en -t vi -d examples/dictionary.json
+transipy -f path_to_file.csv -s en -t vi -d path_to/dictionary.json --column Title,Summary
 ```
 
 Example input file:
@@ -180,11 +165,11 @@ Example output file:
 ```csv
 | Title              | Summary                  | Level 1 | Level 2        | Level 3        | Level 4 |
 | ------------------ | ------------------------ | ------- | -------------- | -------------- | ------- |
-| Ung thư dạ dày     | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư đại trực   | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư tuyến giáp | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư phổi       | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư gan        | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư dạ dày     | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư đại trực   | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư tuyến giáp | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư phổi       | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư gan        | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
 ```
 
 ## BUGS:
