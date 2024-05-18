@@ -1,3 +1,4 @@
+import hashlib
 import re
 import zipfile
 
@@ -6,6 +7,9 @@ def get_file_extension(file_path):
 
 def is_csv(file_path):
     return get_file_extension(file_path) == '.csv'
+
+def is_tsv(file_path):
+    return get_file_extension(file_path) == '.tsv'
 
 def is_excel(file_path):
     return get_file_extension(file_path) == '.xlsx'
@@ -30,9 +34,12 @@ def get_all_excel_sheet_names(file_path, skip_list: list = []):
     return [sheet for sheet in sheets if sheet not in skip_list]
 
 def is_supported_file(file_path):
-    return is_csv(file_path) or is_excel(file_path) or is_text(file_path)
+    return is_csv(file_path) or is_tsv(file_path) or is_excel(file_path) or is_text(file_path)
 
 
 def split_df_by_group(df, chunks):
     entities = df.index.unique()
     return [df[df.index.isin(entities[i::chunks])] for i in range(chunks)]
+
+def md5hash(s: str): 
+    return hashlib.md5(s.encode('utf-8')).hexdigest()
