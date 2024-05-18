@@ -125,7 +125,7 @@ options:
 
 Example:
 ```bash
-transipy -f path_to_file.[csv, tsv, txt, xlsx] -s en -t vi
+transipy -f path_to_file.[csv, tsv, txt, xlsx] -s <source> -t <target>
 ```
 
 #### Translate a file with a dictionary
