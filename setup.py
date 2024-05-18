@@ -10,14 +10,14 @@ def get_requirements(path: str):
 setup(
     name='Fastest Google Translator',
     version='1.0.1',
-    description='',
+    description='Transipy is your one-stop solution for lightning-fast and accurate document translation.',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author=', '.join(['Hien Vu', '']),
     author_email=', '.join(['hienvq23@gmail.com', '']),
-    url='',
+    url='https://github.com/NeiH4207/transipy',
     packages=find_packages(),
-    keywords='',
+    keywords='google translate, translation, document translation, language translation',
     install_requires=get_requirements("requirements.txt"),
     python_requires='>=3.10',
     entry_points={
