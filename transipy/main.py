@@ -20,7 +20,7 @@ def get_parser():
     parser.add_argument('-d', '--dictionary', type=str, default=None, help='The dictionary file path, using for custom translation')
     parser.add_argument('--column', type=str, default=None, help='The column name to translate, separated by comma')
     parser.add_argument('--skip', type=str, default=None, help='The column name to skip, separated by comma')
-    parser.add_argument('--sheet', type=str, default=None, help='The sheet name to translate, separated by comma')
+    parser.add_argument('--sheet', type=str, default=None, help='The sheet name to translate, separated by comma (only for .xlsx files)')
     return parser.parse_args()
 
 def main():    
@@ -134,5 +134,5 @@ def main():
         with open(output_file, 'w') as f:
             f.write('\n'.join(df['text'].tolist()))
     else:
-        logger.error("Unsupported file format. Please use .csv/.txt or .xlsx files.")
+        logger.error("Unsupported file format. Please use .csv/.tsv/.txt or .xlsx files.")
         return
