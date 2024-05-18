@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/NeiH4207/transipy">
-    <img src="images/transipy_logo.png" alt="Logo" width="80" height="80">
+    <img src="images/transipy_logo.png" alt="Logo" width="180" height="180">
   </a>
 
   <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>
@@ -45,16 +45,13 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -79,7 +76,7 @@ Transform your document translation workflow with Transipy – the powerful, fas
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Installation
 
 Install the required packages using the following command:
 
@@ -128,26 +125,10 @@ options:
 
 Example:
 ```bash
-transipy -f examples/sample.csv --sep comma -s en -t vi
-transipy -f examples/news_sample.csv --sep comma -s en -t vi --skip label
-transipy -f examples/news_sample.csv --sep comma -s en -t vi --column main_text
+transipy -f path_to_file.[csv, tsv, txt, xlsx] -s en -t vi
 ```
 
-#### Translate a TXT file
-
-Example:
-```bash
-transipy -f examples/sample.txt -s en -t vi
-```
-
-#### Translate a XLSX file
-
-Example:
-```bash
-transipy -f examples/sample.xlsx -s en -t vi
-```
-
-#### Translate a file with a default dictionary
+#### Translate a file with a dictionary
 
 The dictionary file is a JSON file that contains the translation of the words. 
 The dictionary file should be in the following format (see examples/dictionary.json):
@@ -159,9 +140,10 @@ The dictionary file should be in the following format (see examples/dictionary.j
 }
 ```
 
-Example:
+Example, you have a dictionary file named "dictionary.json" and you want to translate specific columns ("Title" and "Summary") from a CSV file from English to Vietnamese. You can use the following command:
+
 ```bash
-transipy -f examples/sample.xlsx -s en -t vi -d examples/dictionary.json
+transipy -f path_to_file.csv -s en -t vi -d path_to/dictionary.json --column Title,Summary
 ```
 
 Example input file:
@@ -180,11 +162,11 @@ Example output file:
 ```csv
 | Title              | Summary                  | Level 1 | Level 2        | Level 3        | Level 4 |
 | ------------------ | ------------------------ | ------- | -------------- | -------------- | ------- |
-| Ung thư dạ dày     | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư đại trực   | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư tuyến giáp | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư phổi       | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
-| Ung thư gan        | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
+| Ung thư dạ dày     | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư đại trực   | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư tuyến giáp | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư phổi       | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
+| Ung thư gan        | Khả năng phát triển      | lower   | slightly lower | slightly higher| higher  |
 ```
 
 ## BUGS:

@@ -1,5 +1,7 @@
 loguru==0.7.2
 pandas==2.2.2
-googletrans-py==4.0.0
+googletrans==4.0.0rc1
 openpyxl==3.1.2
 requests==2.31.0
+h2==3.2.0
+httpx==0.13.3
