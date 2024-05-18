@@ -156,7 +156,6 @@ The dictionary file should be in the following format (see examples/dictionary.j
 {
     "word_1": "translated_word_1",
     "word_2": "translated_word_2",
-    // ...
 }
 ```
 
