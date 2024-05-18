@@ -99,7 +99,8 @@ pip install -e .
 ## Usage
 
 ```bash
-usage: transipy [-h] [-f FILE_PATH] [--sep SEP] [-s SOURCE] [-t TARGET] [-c CHUNK_SIZE] [-o OUTPUT_FILE] [--default-dict DEFAULT_DICT]
+usage: transipy [-h] -f FILE_PATH [-l SEP] -s SOURCE -t TARGET [-c CHUNK_SIZE] [-o OUTPUT_FILE] [-d DICTIONARY] [--column COLUMN]
+                [--skip SKIP] [--sheet SHEET]
 
 Translate text in a file (.csv/.txt) from source language to target language.
 
@@ -107,7 +108,7 @@ options:
   -h, --help            show this help message and exit
   -f FILE_PATH, --file-path FILE_PATH
                         The source file path
-  --sep SEP             The separator of the file
+  -l SEP, --sep SEP     The separator of the file [comma, tab, space,...]
   -s SOURCE, --source SOURCE
                         Source language (e.g. en, vi)
   -t TARGET, --target TARGET
@@ -116,36 +117,52 @@ options:
                         The chunk size for splitting the translation process
   -o OUTPUT_FILE, --output-file OUTPUT_FILE
                         The output file path
-  --default-dict DEFAULT_DICT
-                        The default dictionary path for translations
+  -d DICTIONARY, --dictionary DICTIONARY
+                        The dictionary file path, using for custom translation
+  --column COLUMN       The column name to translate, separated by comma
+  --skip SKIP           The column name to skip, separated by comma
+  --sheet SHEET         The sheet name to translate, separated by comma
 ```
 
 #### Translate a CSV file
 
 Example:
 ```bash
-transipy -f examples/sample.csv --sep comma -s en -t vi -c 8
+transipy -f examples/sample.csv --sep comma -s en -t vi
+transipy -f examples/news_sample.csv --sep comma -s en -t vi --skip label
+transipy -f examples/news_sample.csv --sep comma -s en -t vi --column main_text
 ```
 
 #### Translate a TXT file
 
 Example:
 ```bash
-transipy -f examples/sample.txt -s en -t vi -c 8
+transipy -f examples/sample.txt -s en -t vi
 ```
 
 #### Translate a XLSX file
 
 Example:
 ```bash
-transipy -f examples/sample.xlsx -s en -t vi -c 8
+transipy -f examples/sample.xlsx -s en -t vi
 ```
 
 #### Translate a file with a default dictionary
 
+The dictionary file is a JSON file that contains the translation of the words. 
+The dictionary file should be in the following format (see examples/dictionary.json):
+
+```json
+{
+    "word_1": "translated_word_1",
+    "word_2": "translated_word_2",
+    // ...
+}
+```
+
 Example:
 ```bash
-transipy -f examples/sample.xlsx --sep , -s en -t vi -c 8 --default-dict examples/dictionary.json
+transipy -f examples/sample.xlsx -s en -t vi -d examples/dictionary.json
 ```
 
 Example input file:
@@ -171,6 +188,9 @@ Example output file:
 | Ung thư gan        | Khả năng phát triển      | thấp    | khá thấp       | khá cao        | cao     |
 ```
 
+## BUGS:
+- Error: `invalid syntax. Perhaps you forgot a comma?` - This error appears due to a bug from the current gg translate version. The problem is when the text contains certain words (for example "nullified") that will cause this.
+- Error: `HTTPSConnectionPool(host='translate.googleapis.com', port=443): Max retries exceeded with url` - This error appears due to the limitation of the google translate API. The solution is to increase the `-c chunk_size` parameter to reduce the number of requests to the API in a short time.
 
 <!-- CONTRIBUTING -->
 ## Contributing
