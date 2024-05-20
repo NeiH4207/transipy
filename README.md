@@ -1,10 +1,8 @@
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
 <!-- [![Forks][forks-shield]][forks-url] -->
-<!-- [![Stargazers][stars-shield]][stars-url]
-[![Downloads](https://static.pepy.tech/personalized-badge/transipy?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/transipy)    
-[![PyPI](https://img.shields.io/pypi/v/transipy)](https://pypi.org/project/transipy/)   
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/transipy)](https://pypi.org/project/transipy/)
-[![Issues][issues-shield]][issues-url] -->
+<!-- [![Stargazers][stars-shield]][stars-url] -->
+[![Downloads](https://static.pepy.tech/personalized-badge/transipy?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/transipy)
+[![PyPI](https://img.shields.io/pypi/v/transipy)](https://pypi.org/project/transipy/)
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
