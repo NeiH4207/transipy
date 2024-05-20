@@ -1,6 +1,9 @@
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
 <!-- [![Forks][forks-shield]][forks-url] -->
 <!-- [![Stargazers][stars-shield]][stars-url]
+[![Downloads](https://static.pepy.tech/personalized-badge/transipy?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/transipy)    
+[![PyPI](https://img.shields.io/pypi/v/transipy)](https://pypi.org/project/transipy/)   
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/transipy)](https://pypi.org/project/transipy/)
 [![Issues][issues-shield]][issues-url] -->
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
@@ -203,6 +206,7 @@ Project Link: [https://github.com/Neih4207/transipy](https://github.com/Neih4207
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[download-url]: https://github.com/NeiH4207/transipy/graphs/contributors
 [contributors-shield]: https://img.shields.io/github/contributors/NeiH4207/transipy.svg?style=for-the-badge
 [contributors-url]: https://github.com/NeiH4207/transipy/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/NeiH4207/transipy.svg?style=for-the-badge
