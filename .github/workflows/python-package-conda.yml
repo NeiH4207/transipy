@@ -1,34 +1,33 @@
-name: Python Package using Conda
+name: transipy
 
 on: [push, pull_request]
 
 jobs:
-  build-linux:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Conda environment
+      uses: conda-incubator/setup-miniconda@v2
       with:
-        python-version: '3.9'
-    - name: Add conda to system path
+        environment-file: environment.yml
+        python-version: 3.9
+        auto-update-conda: true
+
+    - name: Set Conda solver to classic and disable plugins
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        echo $CONDA/bin >> $GITHUB_PATH
-    - name: Install dependencies
-      run: |
+        conda config --set solver classic
         CONDA_NO_PLUGINS=true conda env update --file environment.yml --name base
-    - name: Lint with flake8
+
+    - name: Install additional pip dependencies
       run: |
-        conda install flake8
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+        source activate base
+        pip install -r requirements.txt
+
+    - name: Run tests
       run: |
-        conda install pytest
+        source activate base
         pytest
