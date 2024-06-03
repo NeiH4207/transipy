@@ -1,0 +1,8 @@
+name: transipy
+channels:
+  - defaults
+  
+dependencies:
+  - python=3.9
+  - pytest
+  - pip

@@ -1,5 +1,5 @@
 from time import sleep
-import time
+import docx
 import requests
 import ast
 import requests
@@ -148,3 +148,32 @@ def translate_excel(dfs, sheets=None, src='en', dest='vi', chunk_size=4, diction
             for sheet_name in sheets:
                 dfs[sheet_name].to_excel(writer, sheet_name=sheet_name, index=False)
     return dfs
+
+def translate_docx(file_path, src='en', dest='vi', chunk_size=4, dictionary={}, output_file=None):
+    doc = docx.Document(file_path)
+    translated_doc = docx.Document()
+    
+    raw_docs = []
+    
+    for paragraph in doc.paragraphs:
+        raw_docs.append(paragraph.text)
+        
+    df = pd.DataFrame(raw_docs, columns=['text'])
+    
+    df = translate_df(
+        df=df, 
+        columns=['text'],
+        src=src, 
+        dest=dest, 
+        chunk_size=chunk_size, 
+        dictionary=dictionary, 
+        output_file=output_file
+    )
+    
+    for text in df['text']:
+        translated_doc.add_paragraph(text)
+        
+    if output_file:
+        translated_doc.save(output_file)
+        
+    return translated_doc

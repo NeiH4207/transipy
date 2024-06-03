@@ -3,13 +3,13 @@ import json
 import os
 from loguru import logger
 import pandas as pd
-from transipy.trans_helper import translate_df, translate_excel
+from transipy.trans_helper import translate_df, translate_docx, translate_excel
 from transipy.utils import *
 from googletrans import LANGUAGES
 
 def get_parser():
     parser = argparse.ArgumentParser(
-        description='Translate text in a file (.csv/.txt) from source language to target language.',
+        description='Translate text in a file (.csv/.txt/.tsv/.docx/.xlsx) from source language to target language.',
     )
     parser.add_argument('-f', '--file-path', type=str, required=True, help='The source file path')
     parser.add_argument('-l', '--sep', type=str, default=None, help='The separator of the file [comma, tab, space,...]')
@@ -60,7 +60,7 @@ def main():
     file_extension = get_file_extension(input_file)
     
     if not is_supported_file(input_file):
-        logger.error("Unsupported file format. Please use .csv/.txt or .xlsx files.")
+        logger.error("Unsupported file format. Please use .csv/.tsv/.txt/.docx or .xlsx files.")
         return
     
     if not args.output_file:
@@ -133,6 +133,15 @@ def main():
         )
         with open(output_file, 'w') as f:
             f.write('\n'.join(df['text'].tolist()))
+    elif is_docx(file_extension):
+        translate_docx(
+            file_path=input_file, 
+            src=source_language, 
+            dest=target_language, 
+            chunk_size=chunk_size, 
+            dictionary=dictionary, 
+            output_file=output_file
+        )
     else:
         logger.error("Unsupported file format. Please use .csv/.tsv/.txt or .xlsx files.")
         return
