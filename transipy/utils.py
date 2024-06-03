@@ -17,6 +17,9 @@ def is_excel(file_path):
 def is_text(file_path):
     return get_file_extension(file_path) == '.txt'
 
+def is_docx(file_path):
+    return get_file_extension(file_path) == '.docx'
+
 def get_separetor(sep):
     if sep == 'comma':
         return ','
@@ -34,7 +37,7 @@ def get_all_excel_sheet_names(file_path, skip_list: list = []):
     return [sheet for sheet in sheets if sheet not in skip_list]
 
 def is_supported_file(file_path):
-    return is_csv(file_path) or is_tsv(file_path) or is_excel(file_path) or is_text(file_path)
+    return is_csv(file_path) or is_tsv(file_path) or is_excel(file_path) or is_text(file_path) or is_docx(file_path)
 
 
 def split_df_by_group(df, chunks):
