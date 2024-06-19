@@ -143,5 +143,5 @@ def main():
             output_file=output_file
         )
     else:
-        logger.error("Unsupported file format. Please use .csv/.tsv/.txt or .xlsx files.")
+        logger.error("Unsupported file format. Please use .csv/.tsv/.txt/docx or .xlsx files.")
         return
