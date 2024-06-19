@@ -9,7 +9,7 @@ def get_requirements(path: str):
 
 setup(
     name='transipy',
-    version='1.0.3',
+    version='1.0.4',
     description='Transipy is your one-stop solution for lightning-fast and accurate document translation.',
     long_description=long_description,
     long_description_content_type="text/markdown",

@@ -18,7 +18,7 @@
   <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>
 
   <p align="center">
-    Transipy is your one-stop solution for lightning-fast and accurate document translation. With its parallel processing capabilities, Transipy effortlessly handles large volumes of data in various formats, including CSV, TXT, and XLSX.
+    Transipy is your one-stop solution for lightning-fast and accurate document translation. With its parallel processing capabilities, Transipy effortlessly handles large volumes of data in various formats, including CSV, TXT, DOCX, and XLSX.
     <br />
     <a href="https://github.com/NeiH4207/transipy"><strong>Explore the docs »</strong></a>
     <br />
@@ -126,7 +126,7 @@ options:
 
 Example:
 ```bash
-transipy -f path_to_file.[csv, tsv, txt, xlsx] -s <source> -t <target>
+transipy -f path_to_file.[csv, tsv, txt, xlsx, docx] -s <source> -t <target>
 ```
 
 #### Translate a file with a dictionary
