@@ -32,6 +32,6 @@ def test_main_with_sample_csv(mock_args, sample_csv_path):
     main()
 
     # Assert that the output file was created
-    assert os.path.exists('samples/sample_en_vi.csv')
+    assert os.path.exists('examples/sample_en_vi.csv')
 
     # You can add more assertions here to check the content of the output file
