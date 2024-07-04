@@ -1,3 +1,5 @@
+# Transipy
+
 [![Downloads](https://static.pepy.tech/personalized-badge/transipy?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/transipy)
 [![PyPI](https://img.shields.io/pypi/v/transipy)](https://pypi.org/project/transipy/)
 [![MIT License][license-shield]][license-url]
@@ -9,7 +11,7 @@
     <img src="images/transipy_logo.jpeg" alt="Logo" width="180" height="180">
   </a>
 
-  <h3 align="center">Transipy: The Powerful and Fastest Document Translation Tool</h3>
+  <h3 align="center">Transipy: The Powerful and Fast Document Translation Tool</h3>
 
   <p align="center">
     Transipy is your one-stop solution for lightning-fast and accurate document translation. With its parallel processing capabilities, Transipy effortlessly handles large volumes of data in various formats, including CSV, TXT, DOCX, and XLSX.
@@ -80,6 +82,12 @@ Install the required packages using the following command:
 pip install transipy
 ```
 
+Try a sample translation:
+
+```bash
+transipy -f examples/sample.csv -s en -t vi
+```
+
 You can also install from the git repository:
 
 ```bash
@@ -126,7 +134,7 @@ transipy -f path_to_file.[csv, tsv, txt, xlsx, docx] -s <source> -t <target>
 
 ### Translate a file with a dictionary
 
-The dictionary file is a JSON file that contains the translation of the words. The dictionary file should be in the following format (see examples/dictionary.json):
+The dictionary file is a JSON file that contains the translation of the words. The dictionary file should be in the following format (see `examples/dictionary.json`):
 
 ```json
 {
@@ -190,5 +198,20 @@ Vũ Quốc Hiển - [@hienvq23](mailto:hienvq23@gmail.com) - hienvq23@gmail.com
 
 Project Link: [https://github.com/Neih4207/transipy](https://github.com/Neih4207/transipy)
 
-<!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/NeiH4207/transipy.svg?style
+<!-- MARKDOWN LINKS & IMAGES
+
+ -->
+[contributors-shield]: https://img.shields.io/github/contributors/NeiH4207/transipy.svg?style=for-the-badge
+[download-url]: https://github.com/NeiH4207/transipy/graphs/contributors
+[contributors-url]: https://github.com/NeiH4207/transipy/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/NeiH4207/transipy.svg?style=for-the-badge
+[forks-url]: https://github.com/NeiH4207/transipy/network/members
+[stars-shield]: https://img.shields.io/github/stars/NeiH4207/transipy.svg?style=for-the-badge
+[stars-url]: https://github.com/NeiH4207/transipy/stargazers
+[issues-shield]: https://img.shields.io/github/issues/NeiH4207/transipy.svg?style=for-the-badge
+[issues-url]: https://github.com/NeiH4207/transipy/issues
+[license-shield]: https://img.shields.io/github/license/NeiH4207/transipy.svg?style=for-the-badge
+[license-url]: https://github.com/NeiH4207/transipy/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/neihvq23/
+[product-screenshot]: images/screenshot.png
