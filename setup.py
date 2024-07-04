@@ -19,7 +19,7 @@ setup(
     packages=find_packages(),
     keywords='google translate, translation, document translation, language translation',
     install_requires=get_requirements("requirements.txt"),
-    python_requires='>=3.9',
+    python_requires='>=3.7',
     entry_points={
         'console_scripts': [
             'transipy=transipy:main'
