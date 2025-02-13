@@ -8,3 +8,4 @@ h2==3.2.0
 httpx==0.28.1
 python-docx
 pytest
+tqdm
